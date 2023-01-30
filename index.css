@@ -120,6 +120,11 @@ nav ul {
   flex-wrap: wrap;
 }
 
+nav ul a {
+  text-decoration: none;
+  color: #000;
+}
+
 nav ul li {
   text-decoration: none;
   list-style: none;
@@ -127,11 +132,6 @@ nav ul li {
   text-decoration: none;
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #000;
 }
 
 nav ul li:hover {
@@ -159,7 +159,7 @@ nav ul li:hover {
 
 .banner-text-box {
   position: absolute;
-  top: 500px;
+  top: 545px;
   left: 5px;
   color: #fff;
   font-size: 1rem;
@@ -200,6 +200,10 @@ nav ul li:hover {
   transition: 1s;
 }
 
+.cardRender a {
+  text-decoration: none;
+}
+
 .card-img {
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
@@ -221,7 +225,7 @@ nav ul li:hover {
 
 .p-home-style {
   margin-top: 0.1em;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
 }
 
 .p-home-style a {
@@ -299,6 +303,46 @@ nav ul li:hover {
   color: #000;
 }
 
+.social-links:hover {
+  color: blue;
+  transition: 0.3s;
+}
+
+/* ABOUT PAGE STYLING */
+
+.about-header {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2em;
+}
+
+.petra-img-box {
+  display: flex;
+  justify-content: center;
+}
+
+.petra-img {
+  border-radius: 50%;
+}
+
+.text-box {
+  padding: 1em;
+}
+
+.text-box p,
+h2,
+h3 {
+  margin-bottom: 0.5em;
+}
+
+/* PUBLICATION PAGE */
+
+.publication-card {
+  margin-top: 1em;
+}
+
+/* ************** */
 /* media queries  */
 
 @media (min-width: 768px) {
@@ -306,6 +350,7 @@ nav ul li:hover {
     grid-template-columns: repeat(2, 1fr);
   }
   .banner-text-box {
+    top: 485px;
     font-size: 1.5rem;
     line-height: 1.5;
   }
@@ -324,7 +369,7 @@ nav ul li:hover {
 
   .banner-text-box {
     position: absolute;
-    top: 450px;
+    top: 430px;
     left: 5px;
     color: #fff;
     font-size: 2rem;
@@ -332,16 +377,8 @@ nav ul li:hover {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 0.5em;
   }
-}
 
-/* ABOUT PAGE STYLING */
-
-.about-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 2em;
-}
-
-.petra-img {
-  border-radius: 50%;
+  .about-header {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
