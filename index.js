@@ -2,6 +2,7 @@ import { cards } from "/cards.js";
 
 const cardRender = document.getElementById("cardRender");
 
+// HOME PAGE CARD RENDER
 function distributeCards(id) {
   cards.forEach(function (card) {
     id.innerHTML += `

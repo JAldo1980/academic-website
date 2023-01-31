@@ -30,9 +30,9 @@ export const cards = [
   // 5
   {
     image: "images/thai-5.png",
-    header: "Projects",
-    link: "/projects.html",
-    imgLink: "/projects.html",
+    header: "Teaching",
+    link: "/teaching.html",
+    imgLink: "/teaching.html",
   },
   // 6
   {
