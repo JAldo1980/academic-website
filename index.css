@@ -95,7 +95,10 @@ select {
 }
 
 header {
+  position: relative;
   margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
 }
 
 header h1 {
@@ -272,19 +275,25 @@ nav ul li:hover {
   gap: 2em;
 }
 
+/* TEACHING PAGE */
+
+.teaching-top-box {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
 /* mobile menu */
 
 .mobile-nav {
-  display: block;
-  position: absolute;
-  top: 35px;
-  right: 35px;
-  width: 40px;
-  margin-right: 0em;
+  margin-bottom: 1em;
+  z-index: 2000;
 }
 
 .hamburger {
   display: block;
+  cursor: pointer;
 }
 
 .bar {
@@ -292,7 +301,134 @@ nav ul li:hover {
   width: 35px;
   height: 4px;
   background-color: #000;
+  border: 1px solid white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
+
+/* mobile nav transition */
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* mobile nav interface */
+
+.overlay {
+  display: none;
+}
+
+.overlay.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+  justify-content: center;
+  position: absolute;
+  top: 520px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* fade-in */
+  animation: fadeIn 2s;
+  -webkit-animation: fadeIn all 0.3s ease-in-out;
+  -moz-animation: fadeIn all 0.3s ease-in-out;
+  -o-animation: fadeIn all 0.3s ease-in-out;
+  -ms-animation: fadeIn all 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 140vh;
+  z-index: 1;
+}
+
+.mobile-nav-overlay ul li {
+  color: white;
+}
+
+.mobile-nav-overlay ul li {
+  transition: 0.4s;
+}
+
+.mobile-nav-overlay ul li:hover {
+  color: #54b3d6;
+  transition: 0.4s;
+}
+
+/* fade in keyframes */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.mobile-nav-overlay {
+  text-align: center;
+}
+
+.mobile-nav-overlay ul {
+  padding-left: 0;
+}
+
+.mobile-nav-overlay ul li {
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+.mobile-nav-overlay ul a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
+/* end of mobile nav */
 
 .publications-section h3 {
   margin-top: 1em;
@@ -350,7 +486,7 @@ h3 {
   margin-top: 1em;
 }
 
-/* media page section */
+/* PODCAST PAGE */
 
 .media-box-podcast {
   display: grid;
@@ -404,6 +540,10 @@ h3 {
 
 .social-icon {
   height: 40px;
+}
+
+.active {
+  display: block;
 }
 
 /* ************** */
@@ -478,5 +618,9 @@ h3 {
 
   .activities-two {
     margin-top: 0em;
+  }
+
+  .teaching-top-box {
+    flex-direction: row;
   }
 }
